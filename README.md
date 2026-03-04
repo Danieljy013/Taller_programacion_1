@@ -1,2 +1,18 @@
-# Programacion_1A
-Este repositorio contiene el desarrollo de algoritmos a travez de pseudocodigos y scripts correspondientes al espacio academico  de introduccion a la programacion
+# Café Informativo ☕
+
+Proyecto académico desarrollado con Laravel y Bootstrap.
+
+## Integrantes
+- Daniel Alexander Jojoa Yandun
+- Adriana Lucia Muñoz Rojas
+
+## Funcionalidades
+- Sitio web informativo
+- Formulario PQRS
+- Visualización de PQRS (Admin)
+- Diseño responsive
+
+## Tecnologías
+- Laravel
+- Bootstrap 5
+- PostgreSQL
