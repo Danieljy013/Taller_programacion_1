@@ -50,26 +50,29 @@
     <div class="col-md-6">
         <h4 class="fw-semibold">Mensaje rápido</h4>
 
-        <form>
-            <div class="mb-3">
-                <label class="form-label">Nombre</label>
-                <input type="text" class="form-control" placeholder="Tu nombre">
-            </div>
+        <form action="{{ route('contacto.store') }}" method="POST">
+        @csrf
 
-            <div class="mb-3">
-                <label class="form-label">Correo electrónico</label>
-                <input type="email" class="form-control" placeholder="correo@ejemplo.com">
-            </div>
+        <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input type="text" name="nombre" class="form-control" placeholder="Tu nombre" required>
+        </div>
 
-            <div class="mb-3">
-                <label class="form-label">Mensaje</label>
-                <textarea class="form-control" rows="4" placeholder="Escribe tu mensaje"></textarea>
-            </div>
+        <div class="mb-3">
+            <label class="form-label">Correo electrónico</label>
+            <input type="email" name="correo" class="form-control" placeholder="correo@ejemplo.com" required>
+        </div>
 
-            <button type="submit" class="btn btn-primary">
-                Enviar mensaje
-            </button>
-        </form>
+        <div class="mb-3">
+            <label class="form-label">Mensaje</label>
+            <textarea name="mensaje" class="form-control" rows="4" placeholder="Escribe tu mensaje" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            Enviar mensaje
+        </button>
+
+</form>
     </div>
 
 </div>
