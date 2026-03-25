@@ -56,7 +56,7 @@
             </div>
         @endif
 
-        <form method="POST" action="{{ route('pqrs.store') }}">
+        <form method="POST" action="{{ route('pqrs.store') }}"> 
             @csrf
 
             <div class="mb-3">

@@ -15,9 +15,9 @@ Route::get('/menu', function () {
     return view('menu');
 })->name('menu');
 
-Route::get('/nosotros', function () {
-    return view('nosotros');
-})->name('nosotros');
+Route::get('/nosotros', function () { // Ruta para la página "Nosotros"
+    return view('nosotros'); // Ruta para la página "Nosotros"
+})->name('nosotros'); // Ruta para la página "Nosotros"
 
 Route::get('/contacto', function () {
     return view('contacto');
@@ -52,5 +52,5 @@ Route::delete('/admin/contacto/{id}', function ($id) {
     return redirect()->route('admin');
 })->name('contacto.delete');
 
-Route::post('/pqrs', [PqrsController::class, 'store'])->name('pqrs.store');
+Route::post('/pqrs', [PqrsController::class, 'store'])->name('pqrs.store'); // Ruta para almacenar una nueva PQRS utilizando el método llamado "store" del PqrsController
 Route::post('/contacto', [ContactController::class, 'store'])->name('contacto.store');
