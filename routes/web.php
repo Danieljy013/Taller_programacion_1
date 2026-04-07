@@ -52,5 +52,8 @@ Route::delete('/admin/contacto/{id}', function ($id) {
     return redirect()->route('admin');
 })->name('contacto.delete');
 
+Route::get('/mensajes.index',[PqrsController::class,'index'])->name('mensajes.index');
+
 Route::post('/pqrs', [PqrsController::class, 'store'])->name('pqrs.store'); // Ruta para almacenar una nueva PQRS utilizando el método llamado "store" del PqrsController
 Route::post('/contacto', [ContactController::class, 'store'])->name('contacto.store');
+

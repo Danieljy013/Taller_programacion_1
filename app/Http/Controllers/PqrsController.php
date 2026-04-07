@@ -7,27 +7,26 @@ use Illuminate\Http\Request;
 
 class PqrsController extends Controller
 {
-    public function store(Request $request) // Método para almacenar una nueva PQRS
-                                            // en el request se reciben los datos del formulario y pasan atravez de el https(vista)
-                                            // y por ultimo los inyecta en la tabla dentro de la BD
+    // ✅ Método para guardar PQRS
+    public function store(Request $request)
     {
         $request->validate([
             'nombre' => 'required|min:3',
-            'email' => 'required|email', //Aqui se validan todos los datos
+            'email' => 'required|email',
             'tipo' => 'required',
             'mensaje' => 'required|min:10|max:255',
         ]);
 
-        //---------------------------------------------------------------------------------
-        //Pqrs::create([                 
-        //'nombre'=>$request->nombre,
-        //'email'=>$request->email,
-        //'tipo'=>$request->tipo,
-        //'mensaje'=>$request->mensaje,
-        //]);
-        //--------------------------------------------------------------------------------
-        Pqrs::create($request->all()); 
+        Pqrs::create($request->all());
 
-        return back()->with('success', 'PQRS enviada correctamente'); //Redirecciona a la misma página con un mensaje de éxito
+        return back()->with('success', 'PQRS enviada correctamente');
+    }
+
+    // ✅ Método para mostrar mensajes
+    public function index()
+    {
+        $mensajes = Pqrs::orderBy('id', 'desc')->get();
+
+        return view('mensajes', compact('mensajes'));
     }
 }
